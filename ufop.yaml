@@ -1,0 +1,12 @@
+image: ubuntu
+
+build_script:
+  - echo $PWD
+  - echo $RESOURCE
+  - mv $RESOURCE/* .
+  - npm install
+  - sudo apt-get update
+  - sudo npm install -g coffee-script
+  - sudo apt-get install nodejs-legacy
+
+run: coffee app.coffee -n
